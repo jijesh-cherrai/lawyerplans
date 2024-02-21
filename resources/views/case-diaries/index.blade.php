@@ -18,12 +18,12 @@
                             <table id="caseDiaries-table" class="table table-sm " style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th></th>
+                                        <th>+</th>
                                         <th>Case Number</th>
                                         <th>Court</th>
                                         <th>Party Names</th>
                                         <th>Case Date</th>
-                                        <th>Purpose</th>
+                                        <th>Case Type</th>
                                         <th>Opposit Lawyer</th>
                                         <th>Notes</th>
                                         <th>Actions</th>
@@ -87,9 +87,9 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <label for="purpose">Purpose</label>
-                                <input type="text" class="form-control" id="purpose" name="purpose"
-                                    placeholder="Enter Purpose">
+                                <label for="case_type">Case Type</label>
+                                <input type="text" class="form-control" id="case_type" name="case_type"
+                                    placeholder="Enter Case Type">
                                 <span class="invalid-feedback" role="alert"></span>
                             </div>
                             <div class="col-sm-6 mb-3 mb-sm-0">
@@ -157,7 +157,7 @@
                         data: null,
                         defaultContent: '',
                         targets: 0,
-                        visible: false
+                        visible: true
                     },
                     {
                         responsivePriority: 1,
@@ -176,7 +176,6 @@
                 columns: [
                     {
                         data: null,
-                        defaultContent: "",
                         orderable: false,
                         searchable: false
                     },
@@ -197,8 +196,8 @@
                         name: 'case_date'
                     },
                     {
-                        data: 'purpose',
-                        name: 'purpose'
+                        data: 'case_type',
+                        name: 'case_type'
                     },
                     {
                         data: 'opposit_lawyer',
@@ -259,7 +258,7 @@
                 $('#opposit_lawyer').val('');
                 $('#notes').val('');
                 $('#case_date').val('');
-                $('#purpose').val('');
+                $('#case_type').val('');
 
                 loadCourt();
             });
@@ -321,7 +320,7 @@
                         $('#opposit_lawyer').val(response.opposit_lawyer);
                         $('#notes').val(response.notes);
                         $('#case_date').val(response.case_date);
-                        $('#purpose').val(response.purpose);
+                        $('#case_type').val(response.case_type);
                         $('#caseDiaryModal').modal('show');
                     },
                     error: function(xhr) {

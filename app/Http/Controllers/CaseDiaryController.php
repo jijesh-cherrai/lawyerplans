@@ -27,7 +27,7 @@ class CaseDiaryController extends Controller
                     ->orWhere('party_names', 'like', "%$searchValue%")
                     ->orWhere('case_date', 'like', "%$searchValue%")
                     ->orWhere('opposit_lawyer', 'like', "%$searchValue%")
-                    ->orWhere('purpose', 'like', "%$searchValue%");
+                    ->orWhere('case_type', 'like', "%$searchValue%");
             });
         }
 
@@ -56,7 +56,7 @@ class CaseDiaryController extends Controller
             'court_id' => 'required|exists:courts,id',
             'party_names' => 'required|string',
             'case_date' => 'required|date',
-            'purpose' => 'required|string',
+            'case_type' => 'required|string',
             'opposit_lawyer' => 'nullable|string',
         ]);
 
@@ -74,7 +74,7 @@ class CaseDiaryController extends Controller
             'court_id' => 'required|exists:courts,id',
             'party_names' => 'required|string',
             'case_date' => 'required|date',
-            'purpose' => 'required|string',
+            'case_type' => 'required|string',
             'opposit_lawyer' => 'nullable|string',
         ]);
 

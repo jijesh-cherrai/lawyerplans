@@ -16,7 +16,7 @@ class CaseDiaries extends Migration
             $table->string('opposit_lawyer')->nullable();
             $table->text('notes')->nullable();
             $table->date('case_date');
-            $table->string('purpose');
+            $table->string('case_type');
             $table->timestamps();
 
             // Define the foreign key constraint

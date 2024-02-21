@@ -14,7 +14,7 @@ class CaseDiary extends Model
         'court_id',
         'party_names',
         'case_date',
-        'purpose',
+        'case_type',
         'opposit_lawyer',
         'notes',
     ];
